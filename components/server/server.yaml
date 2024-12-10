@@ -66,10 +66,11 @@ Server:
       description: The plan of the server
       example: FREE
     credits_per_day:
-      type: integer
+      type: number
       minimum: 0
       description: The amount of credits the server owner can earn per day
       example: 0
+      format: double
     visibility:
       type: boolean
       description: Whether the server is visible in the server list
