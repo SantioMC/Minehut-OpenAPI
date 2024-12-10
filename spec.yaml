@@ -117,10 +117,7 @@ paths:
           required: true
           description: Whether to get the server by its name or id
           schema:
-            type: string
-            enum:
-              - true
-              - false
+            type: boolean
           example: true
         - name: identifier
           in: path
