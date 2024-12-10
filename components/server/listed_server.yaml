@@ -18,6 +18,7 @@ ListedServer:
           minimum: 0
           description: The date the server was started
           example: 1730000000000
+          format: int64
         platform:
           type: string
           description: The platform the server is running on

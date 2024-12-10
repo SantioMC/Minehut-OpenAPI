@@ -22,6 +22,7 @@ Server:
       minimum: 0
       description: The date the server was created
       example: 1584826062659
+      format: int64
     platform:
       type: string
       description: The platform the server is running on
@@ -55,6 +56,7 @@ Server:
       minimum: 0
       description: The date the server was last online
       example: 1733720065577
+      format: int64
     motd:
       type: string
       description: The message of the day of the server
@@ -143,6 +145,7 @@ Server:
           minimum: 0
           description: The date the server was started to be deleted
           example: 0
+          format: int64
         reason:
           type: string
           description: The reason the server was deleted
@@ -156,6 +159,7 @@ Server:
           minimum: 0
           description: The date the deletion of the server was completed
           example: 0
+          format: int64
         storage_completed:
           type: boolean
           description: Whether the storage of the server has been completed
@@ -165,6 +169,7 @@ Server:
           minimum: 0
           description: The date the storage of the server was completed
           example: 0
+          format: int64
     deleted:
       type: boolean
       description: Whether the server has been deleted
