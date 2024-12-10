@@ -123,9 +123,7 @@ Server:
       description: The amount of times the server has been joined
       example: 36
     daily_online_time:
-      type: array
-      items:
-        type: string
+      type: object
       description: A list of all categories the server is in
       example: []
       additionalProperties:
