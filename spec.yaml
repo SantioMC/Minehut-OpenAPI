@@ -1,12 +1,14 @@
 openapi: 3.1.0
 info:
   title: Minehut API
-  description: "This specification is an unofficial API specification of the Minehut API. Publically 
-  accessible routes will be documented, however additional routes may be contributed by the community.
-  Please keep in mind that usage of the API is meant for private use only, and using the API for
-  malicious purposes is not allowed.
-  <br><br>
-  This API is maintained by Santio for usage in the MinehutUtils project used in the official Minehut discord."
+  description: >
+    This specification is an unofficial API specification of the Minehut API.
+    Publicly accessible routes will be documented, however additional routes may be contributed by the community.
+    Please keep in mind that usage of the API is meant for private use only, and using the API for
+    malicious purposes is not allowed.
+
+
+    This API is maintained by Santio for usage in the MinehutUtils project used in the official Minehut discord.
   version: 1.0.0
 servers:
   - url: https://api.minehut.com
