@@ -34,7 +34,7 @@ jobs:
       - name: Bundle spec
         uses: DeltaLaboratory/redocly-cli-action@v1.0.0
         with:
-          args: bundle spec.yaml -k -o pages/api.yaml
+          args: bundle spec.yaml -k -o api.yaml
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
