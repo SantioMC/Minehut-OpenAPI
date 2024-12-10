@@ -1,0 +1,153 @@
+openapi: 3.1.0
+info:
+  title: Minehut API
+  description: "This specification is an unofficial API specification of the Minehut API. Publically 
+  accessible routes will be documented, however additional routes may be contributed by the community.
+  Please keep in mind that usage of the API is meant for private use only, and using the API for
+  malicious purposes is not allowed.
+  <br><br>
+  This API is maintained by Santio for usage in the MinehutUtils project used in the official Minehut discord."
+  version: 1.0.0
+servers:
+  - url: https://api.minehut.com
+    description: The production API
+  - url: https://api.dev.minehut.com/
+    description: The development API
+tags:
+  - name: Network
+    description: Routes relating to the core network, such as statistics and player distribution
+  - name: Servers
+    description: Routes relating to player servers running on Minehut, such as querying data, getting servers, and more
+paths:
+  /network/simple_stats:
+    get:
+      tags:
+        - Network
+      summary: Get the network statistics
+      description: Returns the network statistics of the server
+      operationId: getNetworkStatistics
+      responses:
+        200:
+          description: The network statistics
+          content:
+            application/json:
+              schema:
+                $ref: './components/network/simple_stats.yaml/#/SimpleStats'
+                description: The network statistics
+  /network/players/distribution:
+    get:
+      tags:
+        - Network
+      summary: Get the player distribution
+      description: Returns the distribution of players across the network
+      operationId: getPlayerDistribution
+      responses:
+        200:
+          description: The player statistics and distribution
+          content:
+            application/json:
+              schema:
+                $ref: './components/network/player_stats.yaml/#/PlayerStats'
+                description: The player statistics and distribution
+  /network/ranks:
+    get:
+      tags:
+        - Network
+      summary: Get all ranks
+      description: Get the list of every rank on Minehut
+      operationId: getRanks
+      responses:
+        200:
+          description: The ranks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './components/network/rank.yaml/#/Rank'
+                description: A collection of every rank
+  /servers:
+    get:
+      tags:
+        - Servers
+      summary: Get all servers
+      description: Get a list of all servers on Minehut
+      operationId: getServers
+      responses:
+        200:
+          description: The servers
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_players:
+                    type: integer
+                    minimum: 0
+                    description: The total amount of players online on the network
+                    example: 1000
+                  total_servers:
+                    type: integer
+                    minimum: 0
+                    description: The total amount of servers online on the network
+                    example: 100
+                  total_search_results:
+                    type: integer
+                    minimum: 0
+                    description: The total amount of servers (included in this response) that are publicly searchable
+                    example: 100
+                  servers:
+                    type: array
+                    items:
+                      $ref: './components/server/listed_server.yaml/#/ListedServer'
+                    description: A list of all servers
+                description: The response containing all servers
+  /server/{identifier}:
+    get:
+      tags:
+        - Servers
+      summary: Get a server
+      description: Get a single server either by its id or name
+      operationId: getServer
+      parameters:
+        - name: byName
+          in: query
+          required: true
+          description: Whether to get the server by its name or id
+          schema:
+            type: string
+            enum:
+              - true
+              - false
+          example: true
+        - name: identifier
+          in: path
+          required: true
+          description: The id or name of the server
+          schema:
+            type: string
+          example: SantioTest
+      responses:
+        200:
+          description: The server
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  server:
+                    $ref: './components/server/server.yaml/#/Server'
+                    description: The server
+                description: The server
+        400:
+          description: The server was not found (Status code is actually 200)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  server:
+                    type: object
+                    description: This value is null if the server was not found
+                    example: null
+                description: The error message

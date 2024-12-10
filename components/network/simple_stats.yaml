@@ -1,0 +1,31 @@
+SimpleStats:
+  type: object
+  properties:
+    player_count:
+      type: integer
+      minimum: 0
+      description: The number of players online on the entire network
+    server_count:
+      type: integer
+      minimum: 0
+      description: The number of servers online on the entire network
+    server_max:
+      type: integer
+      minimum: 0
+      description: The maximum number of servers that Minehut can currently support
+    server_free:
+      type: integer
+      minimum: 0
+      description: The maximum number of free servers that Minehut can currently support, contrary to it's name, it is NOT the number of free servers that are currently online
+    server_paid:
+      type: integer
+      minimum: 0
+      description: The maximum number of paid servers that Minehut can currently support, contrary to it's name, it is NOT the number of paid servers that are currently online
+    ram_count:
+      type: integer
+      minimum: 0
+      description: The total amount of memory usage across all servers (in MB)
+    ram_max:
+      type: integer
+      minimum: 0
+      description: The maximum amount of memory usage across all servers (in MB), this value is hard coded and does not reflect an actual value.

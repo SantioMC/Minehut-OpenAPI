@@ -1,0 +1,27 @@
+PlayerStats:
+  type: object
+  properties:
+    bedrockTotal:
+      type: integer
+      minimum: 0
+      description: The total number of bedrock players online on the network
+    javaTotal:
+      type: integer
+      minimum: 0
+      description: The total number of java players online on the network
+    bedrockLobby:
+      type: integer
+      minimum: 0
+      description: The number of bedrock players in the lobby
+    bedrockPlayerServer:
+      type: integer
+      minimum: 0
+      description: The number of bedrock players in player servers
+    javaLobby:
+      type: integer
+      minimum: 0
+      description: The number of java players in the lobby
+    javaPlayerServer:
+      type: integer
+      minimum: 0
+      description: The number of java players in player servers

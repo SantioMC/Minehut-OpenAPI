@@ -1,0 +1,74 @@
+Rank:
+  type: object
+  properties:
+    id:
+      type: string
+      description: The id of the rank
+      example: DEFAULT
+    name:
+      type: string
+      description: The name of the rank
+      example: Default
+    ordinal:
+      type: integer
+      minimum: 0
+      description: The ordinal of the rank
+      example: 20
+    color:
+      type: string
+      description: The color of the rank (in minecraft color)
+      example: GRAY
+    chatColor:
+      type: string
+      description: The chat color of the rank (in minecraft color)
+      example: gray
+    prefixColor:
+      type: string
+      description: The prefix color of the rank
+      example: GRAY
+    prefix:
+      type: string
+      description: The prefix of the rank
+      example: "[MOD] "
+    prefixLegacy:
+      type: string
+      description: The legacy prefix of the rank (in legacy color coding)
+      example: "&e[MOD] "
+    prefixMini:
+      type: string
+      description: The minimessage preview of the prefix (adventure api)
+      example: "<yellow>[MOD]</yellow> "
+    staff:
+      type: boolean
+      description: Whether the rank is a staff rank
+      example: false
+    chatDelaySeconds:
+      type: integer
+      minimum: 0
+      description: How long the player needs to wait between each chat message (in seconds)
+    extraPermissions:
+      type: array
+      items:
+        type: string
+      description: The extra permissions of the rank (this may not be used)
+      example: ["bukkit.command.gamemode"]
+    extraAuras:
+      type: array
+      items:
+        type: string
+      description: A list of extra glow colors for the rank, this has always been empty and may not be used
+      example: []
+    adRateLimit:
+      type: integer
+      minimum: 0
+      description: The delay between each time the player can advertise (in seconds)
+      example: 120
+    adMonthlyLimit:
+      type: integer
+      minimum: 0
+      description: The total amount of advertisements the player can make in a month
+      example: 100
+    subscription:
+      type: boolean
+      description: Whether the rank is a subscription rank (renews every month)
+      example: false

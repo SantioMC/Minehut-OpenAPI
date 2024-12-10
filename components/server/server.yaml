@@ -1,0 +1,210 @@
+Server:
+  type: object
+  properties:
+    _id:
+      type: string
+      description: The unique id identifying the server
+      example: 5e7686cea96d4a00516cc8ff
+    owner:
+      type: string
+      description: The id of the owner of the server
+      example: 5a5bb4468a6fb129aa16b617
+    name:
+      type: string
+      description: The name of the server
+      example: SantioTest
+    name_lower:
+      type: string
+      description: The lowercase name of the server
+      example: santiotest
+    creation:
+      type: integer
+      minimum: 0
+      description: The date the server was created
+      example: 1584826062659
+    platform:
+      type: string
+      description: The platform the server is running on
+      example: java
+    storage_node:
+      type: string
+      description: The storage node the server is running on
+      example: s2
+    suspended:
+      type: boolean
+      description: Whether the server is suspended
+      example: false
+    purchased_icons:
+      type: array
+      items:
+        type: string
+      description: A list of purchased icons for the server
+      example: ["5fb5905b22006e0095e5a4f6", "5eb9c1164128c21cae29c231"]
+    __v:
+      type: integer
+      minimum: 0
+      description: The version of the server
+      example: 4
+    port:
+      type: integer
+      minimum: -1
+      description: The port the server is running on
+      example: -1
+    last_online:
+      type: integer
+      minimum: 0
+      description: The date the server was last online
+      example: 1733720065577
+    motd:
+      type: string
+      description: The message of the day of the server
+      example: "<gold>Santio71 <dark_gray>» <yellow>Development Server"
+    server_plan:
+      type: string
+      description: The plan of the server
+      example: FREE
+    credits_per_day:
+      type: integer
+      minimum: 0
+      description: The amount of credits the server owner can earn per day
+      example: 0
+    visibility:
+      type: boolean
+      description: Whether the server is visible in the server list
+      example: false
+    backup_slots:
+      type: integer
+      minimum: 0
+      description: The amount of backup slots the server has
+      example: 0
+    active_icon:
+      type: string
+      description: The active icon of the server
+      example: 5fb5905b22006e0095e5a4f6
+    categories:
+      type: array
+      items:
+        type: string
+      description: A list of categories the server is in
+      example: []
+    server_version_type:
+      type: string
+      description: The version type of the server
+      example: PAPER
+    connectedServers:
+      type: array
+      items:
+        type: string
+      description: A list of connected servers (a list of their ids)
+      example: []
+    inheritedCategories:
+      type: array
+      items:
+        type: string
+      description: A list of inherited categories the server is in
+      example: []
+    proxy:
+      type: boolean
+      description: Whether the server is a proxy server
+      example: false
+    default_banner_image:
+      type: string
+      description: The default banner image of the server
+      example: server-banner-03.png
+    default_banner_tint:
+      type: string
+      description: The default banner tint of the server
+      example: "#9B9305"
+    joins:
+      type: integer
+      minimum: 0
+      description: The amount of times the server has been joined
+      example: 36
+    daily_online_time:
+      type: array
+      items:
+        type: string
+      description: A list of all categories the server is in
+      example: []
+      additionalProperties:
+        type: integer
+        minimum: 0
+        description: The amount of time the server has been online on the given day
+    deletion:
+      type: object
+      description: The deletion status of the server
+      properties:
+        started:
+          type: boolean
+          description: Whether the server is being deleted
+          example: false
+        started_at:
+          type: integer
+          minimum: 0
+          description: The date the server was started to be deleted
+          example: 0
+        reason:
+          type: string
+          description: The reason the server was deleted
+          example: ""
+        completed:
+          type: boolean
+          description: Whether the deletion of the server has been completed
+          example: false
+        completed_at:
+          type: integer
+          minimum: 0
+          description: The date the deletion of the server was completed
+          example: 0
+        storage_completed:
+          type: boolean
+          description: Whether the storage of the server has been completed
+          example: false
+        storage_completed_at:
+          type: integer
+          minimum: 0
+          description: The date the storage of the server was completed
+          example: 0
+    deleted:
+      type: boolean
+      description: Whether the server has been deleted
+      example: false
+    hidden:
+      type: boolean
+      description: Whether the server is hidden
+      example: false
+    icon:
+      type: string
+      description: The icon of the server
+      example: DRAGON_EGG
+    online:
+      type: boolean
+      description: Whether the server is online
+      example: false
+    maxPlayers:
+      type: integer
+      minimum: 0
+      description: The maximum amount of players the server can support
+      example: 10
+    playerCount:
+      type: integer
+      minimum: 0
+      description: The amount of players online on the server
+      example: 0
+    rawPlan:
+      type: string
+      description: The raw plan of the server
+      example: FREE
+      enum:
+        - FREE
+        - CUSTOM
+        - DAILY
+        - MH20
+        - MH35
+        - MH75
+        - MHUnlimited
+        - EXTERNAL
+    activeServerPlan:
+      type: string
+      description: The active server plan of the server
+      example: Starter

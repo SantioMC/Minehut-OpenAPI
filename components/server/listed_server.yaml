@@ -1,0 +1,114 @@
+ListedServer:
+  type: object
+  properties:
+    staticInfo:
+      type: object
+      description: The static information of the server
+      properties:
+        _id:
+          type: string
+          description: The unique id identifying the server
+          example: 5e7686cea96d4a00516cc8ff
+        serverPlan:
+          type: string
+          description: The plan of the server
+          example: Starter
+        serviceStartDate:
+          type: integer
+          minimum: 0
+          description: The date the server was started
+          example: 1730000000000
+        platform:
+          type: string
+          description: The platform the server is running on
+          example: java
+        planMaxPlayers:
+          type: integer
+          minimum: 0
+          description: The maximum amount of players the server can support
+          example: 10
+        planRam:
+          type: integer
+          minimum: 0
+          description: The amount of RAM the server can support
+          example: 1024
+        alwaysOnline:
+          type: boolean
+          description: Whether the server is always online
+          example: false
+        rawPlan:
+          type: string
+          description: The raw plan of the server
+          example: CUSTOM
+          enum:
+            - FREE
+            - CUSTOM
+            - DAILY
+            - MH20
+            - MH35
+            - MH75
+            - MHUnlimited
+            - EXTERNAL
+        connectedServers:
+          type: array
+          items:
+            type: string
+          description: A list of connected servers (a list of their ids)
+          example: []
+    maxPlayers:
+      type: integer
+      minimum: 0
+      description: The maximum amount of players the server can support
+      example: 10
+    name:
+      type: string
+      description: The name of the server
+      example: SantioTest
+    motd:
+      type: string
+      description: The message of the day of the server
+      example: A Minehut production
+    icon:
+      type: string
+      description: The icon of the server
+      example: DRAGON_EGG
+    playerData:
+      type: object
+      description: The player data of the server
+      properties:
+        timeNoPlayers:
+          type: integer
+          minimum: 0
+          description: The amount of time the server has been without players
+          example: 0
+        playerCount:
+          type: integer
+          minimum: 0
+          description: The amount of players online on the server
+          example: 1
+    connectable:
+      type: boolean
+      description: Whether the server is connectable
+      example: true
+    visibility:
+      type: boolean
+      description: Whether the server is visible in the server list
+      example: true
+    allCategories:
+      type: array
+      items:
+        type: string
+      description: A list of all categories the server is in
+      example: []
+    usingCosmetics:
+      type: boolean
+      description: Whether the server is using cosmetics
+      example: false
+    author:
+      type: string
+      description: The in-game username of the server owner
+      example: Santio71
+    authorRank:
+      type: string
+      description: The rank of the in-game server owner (see `/network/ranks`)
+      example: SUPER_HELPER
