@@ -80,8 +80,9 @@ ListedServer:
         timeNoPlayers:
           type: integer
           minimum: 0
-          description: The amount of time the server has been without players
+          description: The timestamp of the last time the server has been without players
           example: 0
+          format: int64
         playerCount:
           type: integer
           minimum: 0
