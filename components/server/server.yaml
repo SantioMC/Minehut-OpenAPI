@@ -130,7 +130,8 @@ Server:
       additionalProperties:
         type: integer
         minimum: 0
-        description: The amount of time the server has been online on the given day
+        description: The timestamp of when the server has been online on the given day
+        format: int64
     deletion:
       type: object
       description: The deletion status of the server
