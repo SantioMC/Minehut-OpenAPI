@@ -72,8 +72,8 @@ paths:
     get:
       tags:
         - Servers
-      summary: Get all servers
-      description: Get a list of all servers on Minehut
+      summary: Get all online servers
+      description: Get a list of all online servers on Minehut
       operationId: getServers
       responses:
         200:
