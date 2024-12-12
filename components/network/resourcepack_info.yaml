@@ -4,7 +4,6 @@ ResourcePackInfo:
     url:
       type: string
       description: The URL to the resource pack
-      example: https://object-storage.svc.atl1.cox.minehut.com/v1/presigner/getpack/2024-12-11-14h-35m-19s_e7270247392410e2c2fc10abb7c6f7f0516acafe.zip
     sha1:
       type: string
       description: The SHA1 hash of the resource pack
