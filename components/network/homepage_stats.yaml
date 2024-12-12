@@ -1,0 +1,11 @@
+HomepageStats:
+  type: object
+  properties:
+    server_count:
+      type: integer
+      minimum: 0
+      description: The number of stotal servers that have been created on Minehut
+    user_count:
+      type: integer
+      minimum: 0
+      description: The number of total users that have a registered account on Minehut
