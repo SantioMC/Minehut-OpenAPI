@@ -36,6 +36,21 @@ paths:
               schema:
                 $ref: './components/network/simple_stats.yaml/#/SimpleStats'
                 description: The network statistics
+  /network/homepage_stats:
+    get:
+      tags:
+        - Network
+      summary: Get the homepage statistics
+      description: Returns the statistics that are displayed on the Minehut homepage
+      operationId: getHomepageStatistics
+      responses:
+        200:
+          description: The homepage statistics
+          content:
+            application/json:
+              schema:
+                $ref: './components/network/homepage_stats.yaml/#/HomepageStats'
+                description: The homepage statistics
   /network/players/distribution:
     get:
       tags:
@@ -51,6 +66,21 @@ paths:
               schema:
                 $ref: './components/network/player_stats.yaml/#/PlayerStats'
                 description: The player statistics and distribution
+  /network/resourcepacks/info:
+    get:
+      tags:
+        - Network
+      summary: Get the resource pack information
+      description: Returns the information about the Minehut resource pack
+      operationId: getResourcePackInfo
+      responses:
+        200:
+          description: The resource pack information
+          content:
+            application/json:
+              schema:
+                $ref: './components/network/resourcepack_info.yaml/#/ResourcePackInfo'
+                description: The resource pack information
   /network/ranks:
     get:
       tags:
@@ -75,6 +105,28 @@ paths:
       summary: Get all online servers
       description: Get a list of all online servers on Minehut
       operationId: getServers
+      parameters:
+        - name: q
+          in: query
+          required: false
+          description: The query to search for servers
+          schema:
+            type: string
+          example: SantioTest
+        - name: category
+          in: query
+          required: false
+          description: The category to filter servers by
+          schema:
+            type: string
+          example: Box
+        - name: limit
+          in: query
+          required: false
+          description: The maximum amount of servers to return
+          schema:
+            type: integer
+          example: 10
       responses:
         200:
           description: The servers
@@ -150,3 +202,40 @@ paths:
                     description: This value is null if the server was not found
                     example: null
                 description: The error message
+  /servers/icons:
+    get:
+      tags:
+        - Servers
+      summary: Get all icons
+      description: Get a list of all icons available for purchase
+      operationId: getIcons
+      responses:
+        200:
+          description: The icons
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './components/server/icon.yaml/#/Icon'
+                description: A collection of every icon
+  /v1/server/categories:
+    get:
+      tags:
+        - Servers
+      summary: Get all categories
+      description: Get a list of all categories
+      operationId: getCategories
+      responses:
+        200:
+          description: The categories
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: './components/server/category.yaml/#/Category'
+                    description: A collection of every category

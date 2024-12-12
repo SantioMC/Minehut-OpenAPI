@@ -1,0 +1,15 @@
+Category:
+  type: object
+  properties:
+    _id:
+      type: string
+      description: The unique id identifying the category
+      example: 66033e213e69e03b853aa0ae
+    backend_name:
+      type: string
+      description: The name of the category
+      example: Box
+    friendly_name:
+      type: string
+      description: The friendly name of the category
+      example: Box

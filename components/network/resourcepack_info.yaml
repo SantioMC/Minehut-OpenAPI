@@ -1,0 +1,10 @@
+ResourcePackInfo:
+  type: object
+  properties:
+    url:
+      type: string
+      description: The URL to the resource pack
+    sha1:
+      type: string
+      description: The SHA1 hash of the resource pack
+      example: e7270247392410e2c2fc10abb7c6f7f0516acafe

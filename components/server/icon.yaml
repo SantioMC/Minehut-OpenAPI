@@ -1,0 +1,58 @@
+Icon:
+  type: object
+  properties:
+    _id:
+      type: string
+      description: The unique id identifying the icon
+      example: 5e7471850275560052b2ea01
+    display_name:
+      type: string
+      description: The display name of the icon
+      example: Diamond Sword
+    icon_name:
+      type: string
+      description: The name of the icon
+      example: DIAMOND_SWORD
+    price:
+      type: integer
+      description: The price of the icon
+      example: 2500
+    rank:
+      type: string
+      description: The rank of the icon
+      example: LEGENDARY
+      enum:
+        - COMMON
+        - UNCOMMON
+        - RARE
+        - EPIC
+        - LEGENDARY
+    available:
+      type: boolean
+      description: Whether the icon is currently available in the store
+      example: true
+    disabled:
+      type: boolean
+      description: Whether the icon is disabled
+      example: false
+    created:
+      type: integer
+      minimum: 0
+      description: The date the icon was created
+      example: 1584689541533
+      format: int64
+    last_updated:
+      type: integer
+      minimum: 0
+      description: The date the icon was last updated
+      example: 1589238006127
+      format: int64
+    __v:
+      type: integer
+      minimum: 0
+      description: The version of the icon
+      example: 0
+    salePrice:
+      type: number
+      description: The sale price of the icon
+      example: 1000
