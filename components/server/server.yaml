@@ -185,18 +185,15 @@ Server:
     transfers:
       type: boolean
       description: Whether the server accepts transfers
-      required: false
       example: false
     fmcs_url:
       type: string
       description: The url of the server on the FMCS
-      required: false
       example: https://findmcserver.com/server/minehut
     boosts:
       type: integer
       minimum: 0
       description: The amount of boosts the server has
-      required: false
       example: 0
     icon:
       type: string
