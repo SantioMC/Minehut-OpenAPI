@@ -245,8 +245,8 @@ paths:
     get:
       tags:
         - Users
-      summary: Get a user's cosmetic profile, which also contains their rank
-      description: Get a user's cosmetic profile
+      summary: Get a user's cosmetic profile
+      description: Get a user's cosmetic profile, which also contains their rank
       operationId: getCosmeticProfile
       parameters:
         - name: uuid
