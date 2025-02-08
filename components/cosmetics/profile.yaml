@@ -226,43 +226,43 @@ CosmeticProfile:
                         minimum: 0
                         description: The amount of the cosmetic
                         example: 5
-        equipped:
-          type: object
-          description: The equipped cosmetics of the user
-          properties:
-            HEAD:
-              type: string
-              description: The equipped head of the user
-              example: HAT:WITCH_24
-            BACK:
-              type: string
-              description: The equipped back of the user
-              example: EMPTY
-            MAIN_HAND:
-              type: string
-              description: The equipped main hand of the user
-              example: EMPTY
-            OFF_HAND:
-              type: string
-              description: The equipped off hand of the user
-              example: EMPTY
-            BALLOON:
-              type: string
-              description: The equipped balloon of the user
-              example: EMPTY
-            COMPANION:
-              type: string
-              description: The equipped companion of the user
-              example: EMPTY
-            PARTICLE:
-              type: string
-              description: The equipped particle of the user
-              example: PARTICLE:BLOB_DANCE
-        rank:
+    equipped:
+      type: object
+      description: The equipped cosmetics of the user
+      properties:
+        HEAD:
           type: string
-          description: The rank of the user
-          example: MOD
-        packHash:
+          description: The equipped head of the user
+          example: HAT:WITCH_24
+        BACK:
           type: string
-          description: The hash of the resource pack
-          example: 5e7686cea96d4a00516cc8ff
+          description: The equipped back of the user
+          example: EMPTY
+        MAIN_HAND:
+          type: string
+          description: The equipped main hand of the user
+          example: EMPTY
+        OFF_HAND:
+          type: string
+          description: The equipped off hand of the user
+          example: EMPTY
+        BALLOON:
+          type: string
+          description: The equipped balloon of the user
+          example: EMPTY
+        COMPANION:
+          type: string
+          description: The equipped companion of the user
+          example: EMPTY
+        PARTICLE:
+          type: string
+          description: The equipped particle of the user
+          example: PARTICLE:BLOB_DANCE
+    rank:
+      type: string
+      description: The rank of the user
+      example: MOD
+    packHash:
+      type: string
+      description: The hash of the resource pack
+      example: 5e7686cea96d4a00516cc8ff
