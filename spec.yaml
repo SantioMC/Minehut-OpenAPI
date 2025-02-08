@@ -20,6 +20,8 @@ tags:
     description: Routes relating to the core network, such as statistics and player distribution
   - name: Servers
     description: Routes relating to player servers running on Minehut, such as querying data, getting servers, and more
+  - name: Users
+    description: Routes relating to player accounts and user data
 paths:
   /network/simple_stats:
     get:
@@ -239,3 +241,27 @@ paths:
                     items:
                       $ref: './components/server/category.yaml/#/Category'
                     description: A collection of every category
+  /cosmetics/profile/{uuid}:
+    get:
+      tags:
+        - Users
+      summary: Get a user's cosmetic profile, which also contains their rank
+      description: Get a user's cosmetic profile
+      operationId: getCosmeticProfile
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: The uuid of the user
+          schema:
+            type: string
+            format: uuid
+          example: "0bfea1b6-8ed9-4eb9-93da-c4273bfa0a09"
+      responses:
+        200:
+          description: The user's cosmetic profile
+          content:
+            application/json:
+              schema:
+                $ref: './components/cosmetics/profile.yaml/#/CosmeticProfile'
+                description: The user's cosmetic profile

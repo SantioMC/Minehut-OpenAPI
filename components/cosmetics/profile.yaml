@@ -1,0 +1,268 @@
+# {"profile":{"purchased":{"PARTICLE":{"EXPLORER":{"category":"PARTICLE","id":"EXPLORER","meta":{"quantity":1}}},"TRINKET":{"SPOOKTACULAR_BOOMBOX":{"id":"SPOOKTACULAR_BOOMBOX","category":"TRINKET","meta":{"quantity":1}},"AARGH_VACUUM":{"category":"TRINKET","id":"AARGH_VACUUM","meta":{"quantity":1}},"AARGH_VACCUUM":{"category":"TRINKET","id":"AARGH_VACCUUM","meta":{"quantity":1}},"CHILI_DOG":{"category":"TRINKET","id":"CHILI_DOG","meta":{"quantity":1}}},"EMOJI":{"SMILE":{"category":"EMOJI","id":"SMILE","meta":{"quantity":2}},"SAD":{"category":"EMOJI","id":"SAD","meta":{"quantity":2}},"MINEHUT":{"category":"EMOJI","id":"MINEHUT","meta":{"quantity":2}},"THUMBS_UP":{"category":"EMOJI","id":"THUMBS_UP","meta":{"quantity":2}},"HEART":{"category":"EMOJI","id":"HEART","meta":{"quantity":2}},"CAT_COOL":{"category":"EMOJI","id":"CAT_COOL","meta":{"quantity":1}},"CAT_HEART":{"category":"EMOJI","id":"CAT_HEART","meta":{"quantity":1}},"CAT_LAUGH":{"category":"EMOJI","id":"CAT_LAUGH","meta":{"quantity":1}},"CAT_MISCHIEF":{"category":"EMOJI","id":"CAT_MISCHIEF","meta":{"quantity":1}},"CAT_SMILE":{"category":"EMOJI","id":"CAT_SMILE","meta":{"quantity":1}},"CAT_SMIRK":{"category":"EMOJI","id":"CAT_SMIRK","meta":{"quantity":1}},"CAT_TONGUE":{"category":"EMOJI","id":"CAT_TONGUE","meta":{"quantity":1}},"CAT_WINNER":{"category":"EMOJI","id":"CAT_WINNER","meta":{"quantity":1}},"CAT_WORRIED":{"category":"EMOJI","id":"CAT_WORRIED","meta":{"quantity":1}},"DOG_ANGRY":{"category":"EMOJI","id":"DOG_ANGRY","meta":{"quantity":1}},"DOG_COOL":{"category":"EMOJI","id":"DOG_COOL","meta":{"quantity":1}},"DOG_CROWN":{"category":"EMOJI","id":"DOG_CROWN","meta":{"quantity":1}},"DOG_CRY":{"category":"EMOJI","id":"DOG_CRY","meta":{"quantity":1}},"DOG_HEART":{"category":"EMOJI","id":"DOG_HEART","meta":{"quantity":1}},"DOG_LAUGH":{"category":"EMOJI","id":"DOG_LAUGH","meta":{"quantity":1}},"KANGAROO":{"category":"EMOJI","id":"KANGAROO","meta":{"quantity":1}},"POLICE_OFFICER":{"category":"EMOJI","id":"POLICE_OFFICER","meta":{"quantity":1}}},"CRATE":{},"COMPANION":{"DRAGON_EGG":{"category":"COMPANION","id":"DRAGON_EGG","meta":{"quantity":1}},"CHEESE_HORSE":{"category":"COMPANION","id":"CHEESE_HORSE","meta":{"quantity":1}},"APPA":{"category":"COMPANION","id":"APPA","meta":{"quantity":1}}},"HAT":{"ARRGH_HELMET":{"category":"HAT","id":"ARRGH_HELMET","meta":{"quantity":1}}},"BALLOON":{"DIAPER":{"category":"BALLOON","id":"DIAPER","meta":{"quantity":1}},"FLYING_DUTCHMAN":{"category":"BALLOON","id":"FLYING_DUTCHMAN","meta":{"quantity":1}},"PRIDE":{"category":"BALLOON","id":"PRIDE","meta":{"quantity":1}}},"WING":{"ATOMIC_JETPACK":{"category":"WING","id":"ATOMIC_JETPACK","meta":{"quantity":1}}},"CURRENCY":{"GEM":{"category":"CURRENCY","id":"GEM","meta":{"quantity":5}}}}},"equipped":{"HEAD":"HAT:WITCH_24","BACK":"EMPTY","MAIN_HAND":"EMPTY","OFF_HAND":"EMPTY","BALLOON":"EMPTY","COMPANION":"EMPTY","PARTICLE":"PARTICLE:BLOB_DANCE"},"rank":"MOD","packHash":null}
+CosmeticProfile:
+  type: object
+  properties:
+    profile:
+      type: object
+      description: The cosmetic profile of the user
+      properties:
+        purchased:
+          type: object
+          description: The purchased cosmetics of the user
+          properties:
+            PARTICLE:
+              type: object
+              description: The purchased particle cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased particle cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: PARTICLE
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: EXPLORER
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            TRINKET:
+              type: object
+              description: The purchased trinket cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased trinket cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: TRINKET
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: SPOOKTACULAR_BOOMBOX
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            EMOJI:
+              type: object
+              description: The purchased emoji cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased emoji cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: EMOJI
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: SMILE
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 2
+            CRATE:
+              type: object
+              description: The purchased crate cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased crate cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: CRATE
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: EMPTY
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            COMPANION:
+              type: object
+              description: The purchased companion cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased companion cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: COMPANION
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: DRAGON_EGG
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            HAT:
+              type: object
+              description: The purchased hat cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased hat cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: HAT
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: ARRGH_HELMET
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            BALLOON:
+              type: object
+              description: The purchased balloon cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased balloon cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: BALLOON
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: DIAPER
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            WING:
+              type: object
+              description: The purchased wing cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased wing cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: WING
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: ATOMIC_JETPACK
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 1
+            CURRENCY:
+              type: object
+              description: The purchased currency cosmetics of the user
+              additionalProperties:
+                type: object
+                description: The purchased currency cosmetics of the user
+                properties:
+                  category:
+                    type: string
+                    description: The category of the cosmetic
+                    example: CURRENCY
+                  id:
+                    type: string
+                    description: The id of the cosmetic
+                    example: GEM
+                  meta:
+                    type: object
+                    description: The metadata of the cosmetic
+                    properties:
+                      quantity:
+                        type: integer
+                        minimum: 0
+                        description: The amount of the cosmetic
+                        example: 5
+        equipped:
+          type: object
+          description: The equipped cosmetics of the user
+          properties:
+            HEAD:
+              type: string
+              description: The equipped head of the user
+              example: HAT:WITCH_24
+            BACK:
+              type: string
+              description: The equipped back of the user
+              example: EMPTY
+            MAIN_HAND:
+              type: string
+              description: The equipped main hand of the user
+              example: EMPTY
+            OFF_HAND:
+              type: string
+              description: The equipped off hand of the user
+              example: EMPTY
+            BALLOON:
+              type: string
+              description: The equipped balloon of the user
+              example: EMPTY
+            COMPANION:
+              type: string
+              description: The equipped companion of the user
+              example: EMPTY
+            PARTICLE:
+              type: string
+              description: The equipped particle of the user
+              example: PARTICLE:BLOB_DANCE
+        rank:
+          type: string
+          description: The rank of the user
+          example: MOD
+        packHash:
+          type: string
+          description: The hash of the resource pack
+          example: 5e7686cea96d4a00516cc8ff
