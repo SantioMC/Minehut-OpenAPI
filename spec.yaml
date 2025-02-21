@@ -9,6 +9,10 @@ info:
 
 
     This API is maintained by Santio for usage in the MinehutUtils project used in the official Minehut discord.
+
+
+    There is also examples for the unoffical TypeScript/JavaScript SDK created by Tarna for some endpoints. Use `npm install minehut` to install
+    the SDK using [Node.js](https://nodejs.org).
   version: 1.0.0
 servers:
   - url: https://api.minehut.com
@@ -30,6 +34,21 @@ paths:
       summary: Get the network statistics
       description: Returns the network statistics of the server
       operationId: getNetworkStatistics
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const homePageStats = await minehut.getSimpleStats();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.getSimpleStats().then((homePageStats) => {/* Your logic here */})
       responses:
         200:
           description: The network statistics
@@ -45,6 +64,21 @@ paths:
       summary: Get the homepage statistics
       description: Returns the statistics that are displayed on the Minehut homepage
       operationId: getHomepageStatistics
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const homePageStats = await minehut.getHomePageStats();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.getHomePageStats().then((homePageStats) => {/* Your logic here */})
       responses:
         200:
           description: The homepage statistics
@@ -60,6 +94,21 @@ paths:
       summary: Get the player distribution
       description: Returns the distribution of players across the network
       operationId: getPlayerDistribution
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const playerDistribution = await minehut.getPlayerDistribution();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.getPlayerDistribution().then((playerDistribution) => {/* Your logic here */})
       responses:
         200:
           description: The player statistics and distribution
@@ -75,6 +124,21 @@ paths:
       summary: Get the resource pack information
       description: Returns the information about the Minehut resource pack
       operationId: getResourcePackInfo
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const resourcePacks = await minehut.getResourcePack();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.getResourcePack().then((resourcePacks) => {/* Your logic here */})
       responses:
         200:
           description: The resource pack information
@@ -90,6 +154,21 @@ paths:
       summary: Get all ranks
       description: Get the list of every rank on Minehut
       operationId: getRanks
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const ranks = await minehut.getRanks();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.getRanks().then((ranks) => {/* Your logic here */})
       responses:
         200:
           description: The ranks
@@ -107,6 +186,25 @@ paths:
       summary: Get all online servers
       description: Get a list of all online servers on Minehut
       operationId: getServers
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            // You can use filters builtin to the SDK to get a more specific result
+            // See https://github.com/jellz/minehut/blob/2549c5333cbae295b59b9140647b0541e2338491/src/server/ServerManager.ts#L35
+            const servers = await minehut.servers.getOnlineServers();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            // You can use filters builtin to the SDK to get a more specific result
+            // See https://github.com/jellz/minehut/blob/2549c5333cbae295b59b9140647b0541e2338491/src/server/ServerManager.ts#L35
+            minehut.servers.getOnlineServers().then((servers) => {/* Your logic here */})
       parameters:
         - name: q
           in: query
@@ -165,6 +263,21 @@ paths:
       summary: Get a server
       description: Get a single server either by its id or name
       operationId: getServer
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const server = await minehut.servers.get({ name: "Golf", byName: true /* Set `byName` to false to use a server id instead */ });
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.servers.get({ name: "Golf", byName: true /* Set `byName` to false to use a server id instead */ }).then((server) => {/* Your logic here */})
       parameters:
         - name: byName
           in: query
@@ -211,6 +324,21 @@ paths:
       summary: Get all icons
       description: Get a list of all icons available for purchase
       operationId: getIcons
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const icons = await minehut.icons.fetchAll();
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.icons.fetchAll().then((icons) => {/* Your logic here */})
       responses:
         200:
           description: The icons
@@ -228,6 +356,21 @@ paths:
       summary: Get all categories
       description: Get a list of all categories
       operationId: getCategories
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            const serverCategories = await minehut.servers.getServerCategories({ fromCache: true /* Pull from builtin cache or not */ });
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            minehut.servers.getServerCategories({ fromCache: true /* Pull from builtin cache or not */ }).then((serverCategories) => {/* Your logic here */})
       responses:
         200:
           description: The categories
@@ -248,6 +391,23 @@ paths:
       summary: Get a user's cosmetic profile
       description: Get a user's cosmetic profile, which also contains their rank
       operationId: getCosmeticProfile
+      x-codeSamples:
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (ES6)'
+          source: |
+            import { Minehut } from 'minehut';
+
+            const minehut = new Minehut();
+            // Input a UUID or use a player name
+            const server = await minehut.players.getCosmetics("Giftedly");
+        - lang: 'JavaScript'
+          label: 'Using Minehut SDK (cjs)'
+          source: |
+            const { Minehut } = require("minehut")
+            
+            const minehut = new Minehut();
+            // Input a UUID or use a player name
+            minehut.players.getCosmetics("Giftedly").then((server) => {/* Your logic here */})
       parameters:
         - name: uuid
           in: path
