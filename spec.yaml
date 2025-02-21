@@ -399,7 +399,7 @@ paths:
 
             const minehut = new Minehut();
             // Input a UUID or use a player name
-            const server = await minehut.players.getCosmetics("Giftedly");
+            const user = await minehut.players.getCosmetics("Giftedly");
         - lang: 'JavaScript'
           label: 'Using Minehut SDK (cjs)'
           source: |
@@ -407,7 +407,7 @@ paths:
             
             const minehut = new Minehut();
             // Input a UUID or use a player name
-            minehut.players.getCosmetics("Giftedly").then((server) => {/* Your logic here */})
+            minehut.players.getCosmetics("Giftedly").then((user) => {/* Your logic here */})
       parameters:
         - name: uuid
           in: path
