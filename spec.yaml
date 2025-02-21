@@ -11,7 +11,7 @@ info:
     This API is maintained by Santio for usage in the MinehutUtils project used in the official Minehut discord.
 
 
-    There is also examples for the unoffical TypeScript/JavaScript SDK created by Tarna for some endpoints. Use `npm install minehut` to install
+    There is also examples for the unoffical TypeScript/JavaScript SDK created by Tarna for all endpoints. Use `npm install minehut` to install
     the SDK using [Node.js](https://nodejs.org).
   version: 1.0.0
 servers:
