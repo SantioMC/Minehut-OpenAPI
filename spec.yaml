@@ -68,6 +68,26 @@ paths:
               schema:
                 $ref: './components/network/player_stats.yaml/#/PlayerStats'
                 description: The player statistics and distribution
+  /network/resourcepacks:
+    get:
+      tags:
+        - Network
+      summary: Get all Minehut resource packs
+      description: Returns a list of Minehut resource packs
+      operationId: getResourcePacks
+      responses:
+        200:
+          description: The resource packs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  packs:
+                    type: array
+                    items:
+                      $ref: './components/network/resourcepack.yaml/#/ResourcePack'
+                    description: The list of resource packs
   /network/resourcepacks/info:
     get:
       tags:
