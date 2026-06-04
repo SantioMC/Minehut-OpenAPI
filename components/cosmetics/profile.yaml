@@ -261,7 +261,7 @@ CosmeticProfile:
     rank:
       type: string
       description: The rank of the user
-      example: MOD
+      example: ADMIN
     packHash:
       type: string
       description: The hash of the resource pack
