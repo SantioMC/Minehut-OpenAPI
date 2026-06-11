@@ -106,6 +106,23 @@ ListedServer:
       type: boolean
       description: Whether the server is using cosmetics
       example: false
+    minehutPlugins:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: The name of the plugin
+          enabled:
+            type: boolean
+            description: Whether the plugin is enabled
+      description: A list of plugins Minehut installs by default and whether they are enabled
+      example:
+        - name: ViaVersion
+          enabled: true
+        - name: ViaBackwards
+          enabled: false
     author:
       type: string
       description: The in-game username of the server owner
@@ -113,4 +130,4 @@ ListedServer:
     authorRank:
       type: string
       description: The rank of the in-game server owner (see `/network/ranks`)
-      example: SUPER_HELPER
+      example: ADMIN

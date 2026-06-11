@@ -35,6 +35,23 @@ Server:
       type: boolean
       description: Whether the server is suspended
       example: false
+    minehut_plugins:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            description: The name of the plugin
+          enabled:
+            type: boolean
+            description: Whether the plugin is enabled
+      description: A list of plugins Minehut installs by default and whether they are enabled
+      example:
+        - name: ViaVersion
+          enabled: true
+        - name: ViaBackwards
+          enabled: false
     purchased_icons:
       type: array
       items:
@@ -61,6 +78,14 @@ Server:
       type: string
       description: The message of the day of the server
       example: "<gold>Santio71 <dark_gray>» <yellow>Development Server"
+    server_list_favicon:
+      type: string
+      description: The server list favicon of the server
+      example: null
+    server_list_motd:
+      type: string
+      description: The server list message of the day of the server
+      example: "[{\"text\": \"Santio71 \", \"color\": \"gold\"}, {\"text\": \"» \", \"color\": \"dark_gray\"}, {\"text\": \"Development Server\", \"color\": \"yellow\"}]"
     server_plan:
       type: string
       description: The plan of the server
@@ -110,6 +135,18 @@ Server:
       type: boolean
       description: Whether the server is a proxy server
       example: false
+    in_game:
+      type: boolean
+      description: Whether the server was created in game or on the website
+      example: false
+    using_cosmetics:
+      type: boolean
+      description: Whether the server has the Minehut cosmetics enabled
+      example: false
+    chat_filter:
+      type: boolean
+      description: Whether the server has the Minehut chat filter enabled
+      example: true
     default_banner_image:
       type: string
       description: The default banner image of the server
