@@ -123,6 +123,14 @@ ListedServer:
           enabled: true
         - name: ViaBackwards
           enabled: false
+    versionMin:
+      type: string
+      description: The minimum version of the server
+      example: 1.21.11
+    versionMax:
+      type: string
+      description: The maximum version of the server
+      example: 26.1.2
     author:
       type: string
       description: The in-game username of the server owner
